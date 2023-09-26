@@ -1,0 +1,49 @@
+<!------------------------- DIRECTIVAS ESTRUCTURABLES ----------------------->
+<!--<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <ul>
+                <li *ngFor="let heroe of heroes">{{ heroe }}</li>
+            </ul>
+        </div>
+    </div>
+</div>-->
+
+<!------------------------- DIRECTIVAS PERSONALIZADAS ----------------------->
+<!----- Formas de usar [ngStyle] ------>
+
+<!--<div class="container">
+    <div class="row">
+        <div class="col-12">
+            &lt;!&ndash;Con ngStyle trabajas directamente con las propiedades del css&ndash;&gt;
+            <p [ngStyle]="{ backgroundColor: activo ? 'green' : 'red' }" >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque ipsam placeat quisquam? Beatae corporis cumque eaque ex, natus quia tempore. Culpa ex facere ipsam modi mollitia omnis praesentium quaerat tempore.</p>
+
+            <p [ngStyle]="getBackgroundColor()">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci animi assumenda corporis distinctio enim, expedita illum ipsa praesentium rem repellendus reprehenderit repudiandae voluptates. Aut consectetur harum labore nemo reprehenderit sunt.</p>
+
+            <p [style.font-size]="'20px'">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A aliquam beatae, dolore eius est exercitationem hic natus optio possimus quod reprehenderit, sunt? Deleniti fugit impedit labore non vero voluptate voluptatum.</p>
+
+            <p [style.font-size]="fontS ? '18px' : '25px'">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid consequuntur dolores eligendi, esse et eum hic illum nam odio pariatur praesentium quibusdam voluptates. Alias aut distinctio molestiae quos sapiente similique.</p>
+
+        </div>
+    </div>
+</div>-->
+
+<!----- Dos formas de usar [ngClass] ------>
+
+<!--<div class="container">
+    <div class="row">
+        &lt;!&ndash;Con ngClass trabajas directamente con las CLASES ASIGNADAS y tienen reglas de css esas clases&ndash;&gt;
+        <div class="col-4" [ngClass]="change ? 'container-green' : 'container-red'"></div>
+        <div class="col-4" [ngClass]="{'container-green': change,'container-red': !change}"></div>
+    </div>
+</div>-->
+
+<!----- INSERTANDO Y USANDO DIRECTIVAS ------>
+
+<!--<div class="container">
+    <div class="row">
+        <div appRoundedBlock>
+            <p appTextPropiedades>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A accusantium alias atque aut doloremque eaque eveniet exercitationem iste, iure iusto, laudantium quae, quidem repellendus tempore temporibus ullam veritatis vitae voluptatum.</p>
+        </div>
+    </div>
+</div>-->
