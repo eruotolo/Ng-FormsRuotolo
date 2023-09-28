@@ -10,6 +10,8 @@ import { EjemplosComponent } from './home/ejemplos/ejemplos.component';
 import { RoundedBlockDirective } from './home/directives/rounded-block.directive';
 import { TextPropiedadesDirective } from './home/directives/text-propiedades.directive';
 import { AlumnosComponent } from './home/alumnos/alumnos.component';
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import { ReactiveFormsComponent } from './home/formularios/reactive-forms/reactive-forms.component';
 
 @NgModule({
   declarations: [
@@ -21,10 +23,13 @@ import { AlumnosComponent } from './home/alumnos/alumnos.component';
     EjemplosComponent,
     RoundedBlockDirective,
     TextPropiedadesDirective,
-    AlumnosComponent
+    AlumnosComponent,
+    ReactiveFormsComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

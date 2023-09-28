@@ -1,0 +1,166 @@
+<div class="container">
+    <div class="row setforms">
+        <div class="col-8">
+            <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="row g-3" autocomplete="off" >
+                <div class="col-6">
+                    <label for="inputFirstName" class="form-label">Nombre</label>
+                    <input
+                        [formControl]="nameControl"
+                        [ngClass]="{ 'is-invalid': nameControlIsInvalid}"
+                        placeholder="Nombre"
+                        type="text"
+                        class="form-control"
+                        id="inputFirstName">
+                    <div class="invalid-feedback">
+                        <ng-container *ngIf="nameControl.hasError('required')">
+                            Este campo es requerido
+                        </ng-container>
+                        <ng-container *ngIf="nameControl.hasError('minlength')">
+                            La longitud mínima es de {{ nameControl.getError('minlength').requiredLength }} caracteres.
+                        </ng-container>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <label for="inputLastName" class="form-label">Apellido</label>
+                    <input
+                        [formControl]="lastnameControl"
+                        [ngClass]="{ 'is-invalid': lastnameControlIsInvalid}"
+                        type="text"
+                        class="form-control"
+                        id="inputLastName">
+                    <div class="invalid-feedback">
+                        <ng-container *ngIf="lastnameControl.hasError('required')">
+                            Este campo es requerido
+                        </ng-container>
+                        <ng-container *ngIf="lastnameControl.hasError('minlength')">
+                            La longitud mínima es de {{ lastnameControl.getError('minlength').requiredLength }} caracteres.
+                        </ng-container>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <label for="inputEmail4" class="form-label">Email</label>
+                    <input
+                        [formControl]="emailControl"
+                        [ngClass]="{ 'is-invalid': emailControlIsInvalid}"
+                        type="email"
+                        class="form-control"
+                        id="inputEmail4">
+
+                    <div class="invalid-feedback">
+                        <ng-container *ngIf="emailControl.errors?.['required']">
+                            Este campo es requerido
+                        </ng-container>
+                        <ng-container *ngIf="emailControl.errors?.['email']">
+                            El valor ingresado no es un email valido
+                        </ng-container>
+                    </div>
+
+                </div>
+                <div class="col-6">
+                    <label for="inputPassword" class="form-label">Contraseña</label>
+                    <input
+                        [formControl]="passwordControl"
+                        [ngClass]="{ 'is-invalid': passwordControlIsInvalid}"
+                        type="password"
+                        class="form-control"
+                        id="inputPassword">
+                    <div class="invalid-feedback">
+                        <ng-container *ngIf="passwordControl.hasError('required')">
+                            Este campo es requerido
+                        </ng-container>
+                        <ng-container *ngIf="passwordControl.hasError('minlength')">
+                            La contraseña debe tener al menos 6 caracteres.
+                        </ng-container>
+                        <ng-container *ngIf="passwordControl.hasError('passwordStrength')">
+                            La contraseña debe contener al menos un número y una letra en mayúscula.
+                        </ng-container>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <label for="inputAddress">Dirección</label>
+                    <input
+                        [formControl]="addressControl"
+                        [ngClass]="{ 'is-invalid': addressControlIsInvalid}"
+                        type="text"
+                        class="form-control"
+                        id="inputAddress"
+                        placeholder="1234 Main St.">
+                    <div class="invalid-feedback">
+                        <ng-container *ngIf="addressControl.hasError('required')">
+                            Este campo es requerido
+                        </ng-container>
+                        <ng-container *ngIf="addressControl.hasError('minlength')">
+                            La longitud mínima es de {{ addressControl.getError('minlength').requiredLength }} caracteres.
+                        </ng-container>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <label for="inputState" class="form-label">Región</label>
+                    <input
+                        [formControl]="stateControl"
+                        [ngClass]="{ 'is-invalid': stateControlIsInvalid}"
+                        type="text"
+                        class="form-control"
+                        id="inputState">
+                    <div class="invalid-feedback">
+                        <ng-container *ngIf="stateControl.hasError('required')">
+                            Este campo es requerido
+                        </ng-container>
+                        <ng-container *ngIf="stateControl.hasError('minlength')">
+                            La longitud mínima es de {{ stateControl.getError('minlength').requiredLength }} caracteres.
+                        </ng-container>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <label for="inputCity" class="form-label">Ciudad</label>
+                    <input
+                        [formControl]="cityControl"
+                        [ngClass]="{ 'is-invalid': cityControlIsInvalid}"
+                        type="text"
+                        class="form-control"
+                        id="inputCity">
+                    <div class="invalid-feedback">
+                        <ng-container *ngIf="cityControl.hasError('required')">
+                            Este campo es requerido
+                        </ng-container>
+                        <ng-container *ngIf="cityControl.hasError('minlength')">
+                            La longitud mínima es de {{ cityControl.getError('minlength').requiredLength }} caracteres.
+                        </ng-container>
+                    </div>
+                </div>
+
+                <div class="col-4">
+                    <label for="inputZip" class="form-label">Zip</label>
+                    <input
+                        [formControl]="zipControl"
+                        [ngClass]="{ 'is-invalid': zipControlIsInvalid}"
+                        type="number"
+                        class="form-control"
+                        id="inputZip">
+                    <div class="invalid-feedback">
+                        <ng-container *ngIf="zipControl.hasError('required')">
+                            Este campo es requerido
+                        </ng-container>
+                        <ng-container *ngIf="zipControl.hasError('minlength')">
+                            La longitud mínima es de {{ zipControl.getError('minlength').requiredLength }} caracteres.
+                        </ng-container>
+                    </div>
+                </div>
+
+                <div class="col-12">
+                    <button
+                        [disabled]="registerForm.invalid"
+                        type="submit"
+                        class="btn btn-primary">Enviar</button>
+                </div>
+
+            </form>
+        </div>
+
+        <div class="col-4">
+            <h2>JSON</h2>
+            {{registerForm.value | json}}
+        </div>
+
+    </div>
+</div>
